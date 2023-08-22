@@ -1,6 +1,6 @@
 
 
-function App() {
+function app() {
   return (
     <div className="App">
 
