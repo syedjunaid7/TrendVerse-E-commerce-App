@@ -32,7 +32,14 @@ export default function Navbar() {
         display="flex"
         justifyContent="space-between"
         alignItems="center" 
-        ></Box>
+        >
+            <Box 
+            onClick = {() => navigate('/')}
+            sx = {{'&:hover': {cursor : 'pointer'}}}
+            >
+                E COMMER
+            </Box>
+        </Box> 
     </Box>
   );
 }
