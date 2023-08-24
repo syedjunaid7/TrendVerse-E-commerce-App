@@ -26,20 +26,40 @@ export default function Navbar() {
       left="0"
       zIndex="1"
     >
-        <Box 
+      <Box
         width="80%"
         margin="auto"
         display="flex"
         justifyContent="space-between"
-        alignItems="center" 
+        alignItems="center"
+      >
+        <Box
+          onClick={() => navigate("/")}
+          sx={{ "&:hover": { cursor: "pointer" } }}
+          color={shades.secondary[500]}
         >
-            <Box 
-            onClick = {() => navigate('/')}
-            sx = {{'&:hover': {cursor : 'pointer'}}}
-            >
-                E COMMER
-            </Box>
-        </Box> 
+          E COMMER
+        </Box>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          columnGap="20px"
+          zIndex="2"
+        >
+          <IconButton sx={{ color: "black" }}>
+            <SearchOutlined />
+          </IconButton>
+          <IconButton sx={{ color: "black" }}>
+            <PersonOutline />
+          </IconButton>
+          <IconButton sx={{ color: "black" }}>
+            <ShoppingBagOutLined />
+          </IconButton>
+          <IconButton sx={{ color: "black" }}>
+            <MenuOutlined />
+          </IconButton>
+        </Box>
+      </Box>
     </Box>
   );
 }
