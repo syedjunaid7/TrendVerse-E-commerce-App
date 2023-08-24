@@ -28,8 +28,10 @@ export default function Navbar() {
     >
         <Box 
         width="80%"
-        
-        
+        margin="auto"
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center" 
         ></Box>
     </Box>
   );
