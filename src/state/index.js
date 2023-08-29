@@ -37,8 +37,18 @@ export const cartSlice = createSlice({
         return item;
       });
     },
-  }
+    setIsCartOpen: (state) => {
+      state.isCartOpen = !state.isCartOpen;
+    },
+  },
 });
-export const { setItems } = createSlice.actions;
+export const {
+  setItems,
+  addToCart,
+  removeFromCart,
+  increaseCount,
+  decreaseCount,
+  setIsCartOpen,
+} = createSlice.actions;
 
 export default cartSlice.reducer;
