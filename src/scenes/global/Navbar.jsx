@@ -1,12 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Badge, Box, IconButton } from "@mui/material";
-import {
-  PersonOutline,
-  ShoppingBagOutLined,
-  MenuOutlined,
-  SearchOutlined,
-} from "@mui/icons-material";
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 
@@ -47,16 +46,16 @@ export default function Navbar() {
           zIndex="2"
         >
           <IconButton sx={{ color: "black" }}>
-            <SearchOutlined />
+            <SearchIcon />
           </IconButton>
           <IconButton sx={{ color: "black" }}>
-            <PersonOutline />
+            <PersonOutlineIcon />
           </IconButton>
           <IconButton sx={{ color: "black" }}>
-            <ShoppingBagOutLined />
+            <ShoppingBagIcon />
           </IconButton>
           <IconButton sx={{ color: "black" }}>
-            <MenuOutlined />
+            <MenuIcon />
           </IconButton>
         </Box>
       </Box>
