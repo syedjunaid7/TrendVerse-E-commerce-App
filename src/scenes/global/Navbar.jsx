@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Badge, Box, IconButton } from "@mui/material";
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
 
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
@@ -13,7 +13,7 @@ import { setIsCartOpen } from "../../state";
 export default function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.cart) //we r grabbing two carts here ,initialised's cart & cartSlice's cart
+  const cart = useSelector((state) => state.cart.cart); //we r grabbing two carts here ,initialised's cart & cartSlice's cart
   return (
     <Box
       display="flex"
@@ -53,9 +53,29 @@ export default function Navbar() {
           <IconButton sx={{ color: "black" }}>
             <PersonOutlineIcon />
           </IconButton>
-          <IconButton sx={{ color: "black" }}>
-            <ShoppingBagIcon />
-          </IconButton>
+          <Badge
+            badgeContent={cart.length}
+            color="secondary"
+            invisible={cart.length === 0}
+            sx={{
+              "& .MultiBadge-badge": {
+                right: 5,
+                top: 5,
+                padding: "0 40px",
+                height: "14px",
+                minWidth: "13px",
+              },
+            }}
+          >
+            {" "}
+            <IconButton
+              onClick={() => dispatch(setIsCartOpen({}))}
+              sx={{ color: "black" }}
+            >
+              <ShoppingBagIcon />
+            </IconButton>
+          </Badge>
+
           <IconButton sx={{ color: "black" }}>
             <MenuIcon />
           </IconButton>
