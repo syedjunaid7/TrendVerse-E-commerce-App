@@ -67,7 +67,6 @@ export default function Navbar() {
               },
             }}
           >
-            {" "}
             <IconButton
               onClick={() => dispatch(setIsCartOpen({}))}
               sx={{ color: "black" }}
