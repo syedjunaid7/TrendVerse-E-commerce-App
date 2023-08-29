@@ -8,10 +8,12 @@ import SearchIcon from '@mui/icons-material/Search';
 
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
+import { setIsCartOpen } from "../../state";
 
 export default function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart) //we r grabbing two carts here ,initialised's cart & cartSlice's cart
   return (
     <Box
       display="flex"
