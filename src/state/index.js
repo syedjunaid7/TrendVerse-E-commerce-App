@@ -17,3 +17,8 @@ export const cartSlice = createSlice({
         } 
     }
 })
+export const {
+    setItems 
+} = createSlice.actions ;
+
+export default cartSlice.reducer;
