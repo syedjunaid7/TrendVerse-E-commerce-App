@@ -15,12 +15,28 @@ export const cartSlice = createSlice({
       //by setting state.items to action.payload,
       // updating the items field in the Redux state with the new data from the action.
     },
-    addToCart : (state, action) => {
-        state.cart = [...state.cart, action.payload.item]
+    addToCart: (state, action) => {
+      state.cart = [...state.cart, action.payload.item];
     },
-    removeFromCart : (state, action) => {
-        state.cart = state.cart.filter((item) => item.id !== action.payload.id);
-    }
+    removeFromCart: (state, action) => {
+      state.cart = state.cart.filter((item) => item.id !== action.payload.id);
+    },
+    increaseCount: (state, action) => {
+      state.cart = state.cart.map((item) => {
+        if (item.id === action.payload.id) {
+          item.count++;
+        }
+        return item;
+      });
+    },
+    decreaseCount: (state, action) => {
+      state.cart = state.cart.map((item) => {
+        if (item.id === action.payload.id && item.count > 1) {
+          item.count--;
+        }
+        return item;
+      });
+    },
   }
 });
 export const { setItems } = createSlice.actions;
