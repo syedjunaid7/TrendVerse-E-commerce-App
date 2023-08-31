@@ -61,7 +61,11 @@ const CartMenu = () => {
           <Box>
             {cart.map((item)=>{
               <Box key={`${item.attributes.name}-${item.id}`}>
+                <FlexBox p='15px 0'>
+                  <Box flex='1 1 40%'>
 
+                  </Box>
+                </FlexBox>
               </Box>
             })}
           </Box>
