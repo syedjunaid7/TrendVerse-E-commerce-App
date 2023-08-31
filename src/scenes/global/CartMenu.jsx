@@ -47,26 +47,23 @@ const CartMenu = () => {
         height="100%"
         backGroundColor="white"
       >
-        <Box
-        padding="30px"
-        overflow="auto"
-        height="100%"
-        >
-          <FlexBox mb='15px'>
+        <Box padding="30px" overflow="auto" height="100%">
+          <FlexBox mb="15px">
             <Typography variant="h3">SHOPPING BAG({cart.length})</Typography>
             <IconButton onClick={() => dispatch(setIsCartOpen({}))}>
-              <CloseIcon/>
+              <CloseIcon />
             </IconButton>
           </FlexBox>
           <Box>
-            {cart.map((item)=>{
+            {cart.map((item) => {
               <Box key={`${item.attributes.name}-${item.id}`}>
-                <FlexBox p='15px 0'>
-                  <Box flex='1 1 40%'>
-
+                <FlexBox p="15px 0">
+                  <Box flex="1 1 40%">
+                    <img
+                    alt={item?name}
                   </Box>
                 </FlexBox>
-              </Box>
+              </Box>;
             })}
           </Box>
         </Box>
