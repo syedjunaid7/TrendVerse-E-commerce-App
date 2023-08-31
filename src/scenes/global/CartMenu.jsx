@@ -28,4 +28,11 @@ const CartMenu = () => {
     const totalPrice = cart.reduce((total, item) => {
       return total + item.count * item.attributes.price;
     }, 0);
+    return (
+      <B0x
+      display ={isCartOpen ? "block" : "none"}
+      >
+        
+      </B0x>
+    )
 }  
