@@ -27,6 +27,12 @@ const Item = ({ item, width }) => {
       },
     },
   } = image;
+
+  return(
+    <Box width={width}>
+        
+    </Box>
+  )
 };
 
 export default Item;
