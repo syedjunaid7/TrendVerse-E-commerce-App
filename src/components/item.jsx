@@ -49,7 +49,11 @@ const Item = ({ item, width }) => {
         width='100%'
         padding='0 5%'
         >
-
+            <Box 
+            display='flex'
+            alignItems='center'
+            backgroundColor={shades.neutral{100}}
+            borderRadius='3px'>
       </Box>
     </Box>
   );
