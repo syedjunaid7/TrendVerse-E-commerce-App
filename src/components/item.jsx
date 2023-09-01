@@ -77,6 +77,8 @@ const Item = ({ item, width }) => {
 Add to Cart
                         </Button>
       </Box>
+      </Box>
+      <Box>
     </Box>
   );
 };
