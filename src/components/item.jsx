@@ -61,14 +61,15 @@ const Item = ({ item, width }) => {
                         >
                           <RemoveIcon />
                         </IconButton>
-                        <Typography>{item.count}</Typography>
+                        <Typography color={shades.primary[300]}>{item.count}</Typography>
                         <IconButton
                           onClick={() =>
-                            dispatch(increaseCount({ id: item.id }))
+                            setCount(count+1))
                           }
                         >
                           <AddIcon />
                         </IconButton>
+                        
       </Box>
     </Box>
   );
