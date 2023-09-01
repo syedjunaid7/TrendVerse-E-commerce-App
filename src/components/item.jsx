@@ -28,11 +28,31 @@ const Item = ({ item, width }) => {
     },
   } = image;
 
-  return(
+  return (
     <Box width={width}>
-        
+      <Box
+        position="relative"
+        onMouseOver={() => setIsHovered(true)}
+        onMouseOut={() => setIsHovered(false)}
+        <img alt={item.name}
+        width='300px'
+        height='400px'
+        src=""
+        onClick={() => navigate()}
+        style={{cursor:'pointer'}}
+        />
+        <Box
+        display={isHovered ? 'blocked' : 'none'}
+        position='absolute'
+        bottom='10%'
+        left='0'
+        width='100%'
+        padding='0 5%'
+        >
+
+      </Box>
     </Box>
-  )
+  );
 };
 
 export default Item;
