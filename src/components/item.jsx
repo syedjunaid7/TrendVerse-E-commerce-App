@@ -54,6 +54,21 @@ const Item = ({ item, width }) => {
             alignItems='center'
             backgroundColor={shades.neutral{100}}
             borderRadius='3px'>
+                                    <IconButton
+                          onClick={() =>
+                            dispatch(decreaseCount({ id: item.id }))
+                          }
+                        >
+                          <RemoveIcon />
+                        </IconButton>
+                        <Typography>{item.count}</Typography>
+                        <IconButton
+                          onClick={() =>
+                            dispatch(increaseCount({ id: item.id }))
+                          }
+                        >
+                          <AddIcon />
+                        </IconButton>
       </Box>
     </Box>
   );
