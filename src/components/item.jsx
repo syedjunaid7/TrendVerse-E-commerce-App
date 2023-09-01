@@ -78,7 +78,10 @@ Add to Cart
                         </Button>
       </Box>
       </Box>
-      <Box>
+      <Box mt='3px'>
+      <Typography variant="subtitle2" colr = {neutral.dark}>
+        
+      </Typography>
     </Box>
   );
 };
