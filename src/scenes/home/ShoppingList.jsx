@@ -19,13 +19,18 @@ const ShoppingList = () => {
   };
 
   async function getItems() {
-    const items = await fetch(
-      "http://localhost:2000/api/items?populate=image",
-      { method: "GET" }
-    );
-    const itemsJson = await items.json();
-    dispatch(setItems(itemsJson.data));
+    try {
+      const items = await fetch("http://localhost:2000/api/items?populate=image", { method: "GET" });
+      if (!items.ok) {
+        throw new Error(`Failed to fetch: ${items.status} ${items.statusText}`);
+      }
+      const itemsJson = await items.json();
+      dispatch(setItems(itemsJson.data));
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   }
+  
 
   useEffect(() => {
     getItems();
